@@ -1,0 +1,8 @@
+###
+POST 172.20.0.3:7000/chat
+Content-Type: application/json
+
+{
+    "user_id":"1",
+    "user_message":"Olá."
+}

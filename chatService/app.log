@@ -1,0 +1,14 @@
+2024/11/11 03:01:06 Application started
+2024/11/11 03:03:23 Received request from IP: 172.20.0.1:56670, Method: POST, Endpoint: /chat
+2024/11/11 03:03:23 Unauthorized request: invalid auth token
+2024/11/11 03:06:10 Received request from IP: 172.20.0.1:56674, Method: POST, Endpoint: /chat
+2024/11/11 03:06:10 Unauthorized request: invalid auth token
+2024/11/11 03:06:28 Received request from IP: 172.20.0.1:56676, Method: POST, Endpoint: /chat
+2024/11/11 03:06:28 Processing request: {ChatID: UserID:1 UserMessage:Olá Config:{Model:gpt-4o ModelMaxTokens:128000 Temperature:0.2 TopP:0.2 N:1 Stop:[["\super-end\"]] MaxTokens:4096 PresencePenalty:0 FrequencyPenalty:0 InitialSystemMessage:Seu nome é Eva. Você é uma assistente baseada em inteligência artificial do Univem - Centro Universitário Eurípides de Marília. Seu principal papel como assistente é auxiliar nossos alunos e professores em quaisquer aspectos relacionados aos cursos de Direito, Ciências Da Computação, e Sistemas de Informação.}}
+2024/11/11 03:06:32 Response sent successfully
+2024/11/11 03:07:30 Received request from IP: 172.20.0.1:56684, Method: POST, Endpoint: /chat
+2024/11/11 03:07:30 Processing request: {ChatID:e9f9f821-bec1-4299-86d8-4fe91a1b4da9 UserID:1 UserMessage:Qual o seu nome ? Config:{Model:gpt-4o ModelMaxTokens:128000 Temperature:0.2 TopP:0.2 N:1 Stop:[["\super-end\"]] MaxTokens:4096 PresencePenalty:0 FrequencyPenalty:0 InitialSystemMessage:Seu nome é Eva. Você é uma assistente baseada em inteligência artificial do Univem - Centro Universitário Eurípides de Marília. Seu principal papel como assistente é auxiliar nossos alunos e professores em quaisquer aspectos relacionados aos cursos de Direito, Ciências Da Computação, e Sistemas de Informação.}}
+2024/11/11 03:07:34 Response sent successfully
+2024/11/11 03:07:57 Received request from IP: 172.20.0.1:56686, Method: POST, Endpoint: /chat
+2024/11/11 03:07:57 Processing request: {ChatID:e9f9f821-bec1-4299-86d8-4fe91a1b4da9 UserID:1 UserMessage:O que pode me dizer sobre os cursos de ciência da computação ? Config:{Model:gpt-4o ModelMaxTokens:128000 Temperature:0.2 TopP:0.2 N:1 Stop:[["\super-end\"]] MaxTokens:4096 PresencePenalty:0 FrequencyPenalty:0 InitialSystemMessage:Seu nome é Eva. Você é uma assistente baseada em inteligência artificial do Univem - Centro Universitário Eurípides de Marília. Seu principal papel como assistente é auxiliar nossos alunos e professores em quaisquer aspectos relacionados aos cursos de Direito, Ciências Da Computação, e Sistemas de Informação.}}
+2024/11/11 03:08:06 Response sent successfully

@@ -1,0 +1,85 @@
+version: "3.8"
+
+services:
+
+  # openbot:
+  #   build:
+  #     context: ./openbot
+  #     dockerfile: Dockerfile.prod
+  #   container_name: openbot_frontend
+  #   hostname: openbot_frontend
+  #   ports: 
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./openbot/:/home/node/app
+  #   extra_hosts:
+  #     - "openbot_chatservice:172.20.0.3"
+  #     - "openbot_mysql:172.20.0.4"
+  #     - "openbot_keycloack:172.20.0.5"
+  #   depends_on:
+  #     - chatservice
+  #     - mysql
+  #     - keycloak
+  #   networks:
+  #     openbot_network:
+  #       ipv4_address: 172.20.0.2
+
+  chatservice:
+    build:
+      context: ./chatService
+      dockerfile: Dockerfile
+    container_name: openbot_chatservice
+    hostname: openbot_chatservice
+    environment:
+      TZ: America/Sao_Paulo
+    ports: []
+    volumes:
+      - ./chatService:/app
+    extra_hosts:
+      - "openbot_mysql:172.20.0.4"
+    depends_on:
+      - mysql
+    networks:
+      openbot_network:
+        ipv4_address: 172.20.0.3
+
+  mysql:
+    image: mysql:8
+    container_name: openbot_mysql
+    hostname: openbot_mysql
+    restart: always
+    environment:
+      TZ: America/Sao_Paulo
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - .docker/mysql:/var/lib/mysql
+      - ./db-init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      openbot_network:
+        ipv4_address: 172.20.0.4
+
+  # keycloak:
+  #   image: quay.io/keycloak/keycloak:21.0
+  #   container_name: openbot_keycloack
+  #   hostname: openbot_keycloack
+  #   command: start-dev
+  #   ports:
+  #     - "9000:8080"
+  #   environment:
+  #     KEYCLOAK_ADMIN: admin
+  #     KEYCLOAK_ADMIN_PASSWORD: admin
+  #   networks:
+  #     openbot_network:
+  #       ipv4_address: 172.20.0.5
+
+networks:
+  openbot_network:
+    external: true
+    name: openbot_network
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
